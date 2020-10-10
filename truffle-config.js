@@ -1,3 +1,6 @@
+require('babel-register');
+require('babel-polyfill');
+
 module.exports = {
     networks: {
 
@@ -35,6 +38,9 @@ module.exports = {
       // production: true    // Treats this network as if it was a public net. (default: false)
     // }
     },
+
+    contracts_directory: './src/contracts/',
+    contracts_build_directory: './src/abis/',
 
     // Configure your compilers
     compilers: {

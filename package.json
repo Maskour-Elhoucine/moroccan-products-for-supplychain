@@ -1,34 +1,51 @@
 {
-  "name": "saffron-for-supplychain",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "saffron-for-supplychain",
+    "version": "0.1.0",
+    "private": false,
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.1",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "babel-polyfill": "^6.26.0",
+        "babel-register": "^6.26.0",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "ethereum-blockies-png": "^0.1.3",
+        "openzeppelin-solidity": "^3.2.0",
+        "react": "^16.13.1",
+        "react-bootstrap": "^1.3.0",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.3",
+        "react-toastify": "^6.0.9",
+        "truffle": "^5.1.48",
+        "web3": "^1.3.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "clean:install": "rm -rf node_modules/ && rm -rf package-lock.json && npm install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Maskour-Elhoucine/Supplychain.git"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
