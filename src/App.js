@@ -71,13 +71,12 @@ class App extends Component {
                 isOpen: false,
             })
         }).once('receipt', (receipt) => {
-            var transX = { 'transactionName': 'Produce('+upc+') By Farmer', 'from': receipt.from, 'to': receipt.to, 'transactionHash': receipt.transactionHash };
-            localStorage.setItem('transaction('+upc+')', JSON.stringify(transX));
+            localStorage.setItem('PPBF'+upc, new Date(Date.now()).toUTCString());
+            toast.success('Product Created!', { position: toast.POSITION.TOP_RIGHT, transition: Slide});
             this.setState({ isOpen: false });
-        }).catch(err => {
-            this.setState({
-                isOpen: false,
-            })
+        }).on('error', (error) => {
+            toast.error('Transaction rejected!', { position: toast.POSITION.TOP_RIGHT, transition: Slide});
+            this.setState({ isOpen: false })
         })
     }
 
@@ -94,9 +93,9 @@ class App extends Component {
                     upc,
                     price
                 ).send({ from: this.state.account }).once('receipt', function (receipt) {
+                    localStorage.setItem('PFSBF'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now for sale by the farmer, check roles for appropriates addresses', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     toast.success('Transactions History gives you a transaction hash, you can verify it', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
-                    this.setState({ isOpen: false });
                 }).on('error', function (reject) {
                     toast.error('May be no product associated to that Universal Product Code, Or farmer has not been connected yet to MetaMask', { position: toast.POSITION.TOP_RIGHT, transition: Zoom});
                     toast.info('Only Farmers can do that process', { position: toast.POSITION.TOP_RIGHT, transition: Zoom });
@@ -117,6 +116,7 @@ class App extends Component {
                 this.state.supplychain.methods.purchaseProductByDistributor(
                     upc
                 ).send({ from: localStorage.getItem('distributorID'), value: balance }).once('receipt', function (receipt) {
+                    localStorage.setItem('PPBD'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now purchased by the distributor.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     toast.success('Transactions History gives you a transaction hash, you can verify it', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
@@ -139,6 +139,7 @@ class App extends Component {
                 this.state.supplychain.methods.shipProductByFarmer(
                     upc
                 ).send({ from: localStorage.getItem('farmerID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PSBF'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now shipped by the farmer.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     toast.success('Transactions History gives you a transaction hash, you can verify it', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
@@ -161,6 +162,7 @@ class App extends Component {
                 this.state.supplychain.methods.receiveProductByDistributor(
                     upc
                 ).send({ from: localStorage.getItem('distributorID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PRBD'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now received by the distributor.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     toast.success('Transactions History gives you a transaction hash, you can verify it', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
@@ -184,9 +186,9 @@ class App extends Component {
                     upc,
                     slices
                 ).send({ from: localStorage.getItem('distributorID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PPCSBD'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now processed by the distributor.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     toast.success('Transactions History gives you a transaction hash, you can verify it', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
-                    this.setState({ isOpen: false });
                 }).on('error', function (reject) {
                     toast.error('May be no product associated to that Universal Product Code, Or distributor has not been connected yet to MetaMask', { position: toast.POSITION.TOP_RIGHT, transition: Zoom});
                     toast.info('Only Distributors can do that process', { position: toast.POSITION.TOP_RIGHT, transition: Zoom });
@@ -206,9 +208,9 @@ class App extends Component {
                 this.state.supplychain.methods.packageProductByDistributor(
                     upc
                 ).send({ from: localStorage.getItem('distributorID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PPCKBD'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now packaged by the distributor.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     toast.success('Transactions History gives you a transaction hash, you can verify it', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
-                    this.setState({ isOpen: false });
                 }).on('error', function (reject) {
                     toast.error('May be no product associated to that Universal Product Code, Or distributor has not been connected yet to MetaMask', { position: toast.POSITION.TOP_RIGHT, transition: Zoom});
                     toast.info('Only Distributor can do that process', { position: toast.POSITION.TOP_RIGHT, transition: Zoom });
@@ -229,6 +231,7 @@ class App extends Component {
                     upc,
                     price
                 ).send({ from: this.state.account }).once('receipt', function (receipt) {
+                    localStorage.setItem('PFSBD'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now for sale by the distributor', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
                 }).on('error', function (reject) {
@@ -251,6 +254,7 @@ class App extends Component {
                 this.state.supplychain.methods.purchaseProductByRetailer(
                     upc
                 ).send({ from: localStorage.getItem('retailerID'), value: balance }).once('receipt', function (receipt) {
+                    localStorage.setItem('PPCHBR'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now purchased by the retailer.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
                 }).on('error', function (reject) {
@@ -272,6 +276,7 @@ class App extends Component {
                 this.state.supplychain.methods.shipProductByDistributor(
                     upc
                 ).send({ from: localStorage.getItem('distributorID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PSBD'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now shipped by the distributor.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
                 }).on('error', function (reject) {
@@ -293,6 +298,7 @@ class App extends Component {
                 this.state.supplychain.methods.receiveProductByRetailer(
                     upc
                 ).send({ from: localStorage.getItem('retailerID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PRBR'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now received by the retailer.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
                 }).on('error', function (reject) {
@@ -315,6 +321,7 @@ class App extends Component {
                     upc,
                     price
                 ).send({ from: localStorage.getItem('retailerID') }).once('receipt', function (receipt) {
+                    localStorage.setItem('PFSBR'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now for sale by the retailer', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
                     this.setState({ isOpen: false });
                 }).on('error', function (reject) {
@@ -332,12 +339,13 @@ class App extends Component {
         this.setState({ isOpen: true })
         this.state.supplychain.methods.getItemBufferTwo(upc).call((err, result) => {
             const theState = result.itemState;
+            const balance = result.productPrice;
             if (theState === '11') {
                 this.state.supplychain.methods.purchaseProductByConsumer(
                     upc
-                ).send({ from: localStorage.getItem('consumerID') }).once('receipt', function (receipt) {
+                ).send({ from: localStorage.getItem('consumerID'), value: balance }).once('receipt', function (receipt) {
+                    localStorage.setItem('PPCHBC'+upc, new Date(Date.now()).toUTCString());
                     toast.success('The product is now purchased by the consumer.', { position: toast.POSITION.TOP_RIGHT, transition: Bounce});
-                    this.setState({ isOpen: false });
                 }).on('error', function (reject) {
                     toast.error('May be no product associated to that Universal Product Code, Or consumer has not been connected yet to MetaMask', { position: toast.POSITION.TOP_RIGHT, transition: Zoom});
                     toast.info('Only Consumers can do that process', { position: toast.POSITION.TOP_RIGHT, transition: Zoom });
@@ -390,18 +398,16 @@ class App extends Component {
             </div>
         )
 
-        const waitingForWeb3Jsx = (
-            <div style={{ textAlign: "center", padding: "3em", fontSize: '2rem' }}>
-                <i className="fas fa-exclamation-triangle text-yellow"/>
-                <span className="text-uppercase font-weight-bold"> Waiting for web3 ... </span>
-            </div>
-        )
+        // const waitingForWeb3Jsx = (
+        //     <div style={{ textAlign: "center", padding: "3em", fontSize: '2rem' }}>
+        //         <i className="fas fa-exclamation-triangle text-yellow"/>
+        //         <span className="text-uppercase font-weight-bold"> Waiting for web3 ... </span>
+        //     </div>
+        // )
 
         return (
             <div>
-                {
-                    this.props.account ? waitingForWeb3Jsx : appJsx
-                }
+                { appJsx }
             </div>
         )
     }

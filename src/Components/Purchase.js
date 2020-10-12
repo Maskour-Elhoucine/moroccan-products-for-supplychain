@@ -41,7 +41,7 @@ class Purchase extends Component {
                                         const upc1 = this.upc1.value
                                         this.props.purchaseProductByDistributor(upc1)
                                     }}>
-                                        <h6 className="heading-small text-muted mb-4">This is <span style={{ color: "#881907" }}>Step 4</span> in the supply chain,
+                                        <h6 className="heading-small text-muted mb-4">This is the <span style={{ color: "#881907" }}>Step 4</span> in the supply chain,
                                             it's about allows the distributor (Only the distributor) to purchase the product that offered for sale by the farmer.</h6>
                                         <div className="pl-lg-4">
                                             <div className="row">
@@ -67,7 +67,7 @@ class Purchase extends Component {
                                         const upc2 = this.upc2.value
                                         this.props.purchaseProductByRetailer(upc2)
                                     }}>
-                                        <h6 className="heading-small text-muted mb-4">This is <span style={{ color: "#881907" }}>Step 10</span> in the supply chain,
+                                        <h6 className="heading-small text-muted mb-4">This is the <span style={{ color: "#881907" }}>Step 10</span> in the supply chain,
                                             it's about allows the retailer (Only the retailer) to purchase the product that offered for sale by the distributor.</h6>
                                         <div className="pl-lg-4">
                                             <div className="row">
@@ -87,14 +87,13 @@ class Purchase extends Component {
                                     </form>
                                 </div>
 
-
                                 <div className="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
                                     <form onSubmit={(event) => {
                                         event.preventDefault()
                                         const upc3 = this.upc3.value
                                         this.props.purchaseProductByConsumer(upc3)
                                     }}>
-                                        <h6 className="heading-small text-muted mb-4">This is <span style={{ color: "#881907" }}>Step 13</span> (the last) in the supply chain,
+                                        <h6 className="heading-small text-muted mb-4">This is the <span style={{ color: "#881907" }}>Step 13</span> (the last) in the supply chain,
                                             it's about allows the consumer (Only the consumer) to purchase the product that offered for sale by the retailer.</h6>
                                         <div className="pl-lg-4">
                                             <div className="row">

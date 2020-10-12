@@ -31,8 +31,8 @@ class Receive extends Component {
                                 <div className="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
                                     <form onSubmit={(event) => {
                                         event.preventDefault()
-                                        const upc = this.upc.value
-                                        this.props.receiveProductByDistributor(upc)
+                                        const upc1 = this.upc1.value
+                                        this.props.receiveProductByDistributor(upc1)
                                     }}>
                                         <h6 className="heading-small text-muted mb-4">This is the <span style={{ color: "#881907" }}>Step 6</span> in the supply chain,
                                             it's about allows the distributor (Only the distributor) to receive the product that the farmer has been shipped.
@@ -41,9 +41,9 @@ class Receive extends Component {
                                             <div className="row">
                                                 <div className="col-lg-12">
                                                     <div className="form-group">
-                                                        <label className="form-control-label" htmlFor="upc">Universal Product Code</label>
-                                                        <input type="number" id="upc" name="upc" className="form-control"
-                                                            ref={(input) => { this.upc = input }} required />
+                                                        <label className="form-control-label" htmlFor="upc1">Universal Product Code</label>
+                                                        <input type="number" id="upc1" name="upc1" className="form-control"
+                                                            ref={(input) => { this.upc1 = input }} required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,8 +58,8 @@ class Receive extends Component {
                                 <div className="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
                                     <form onSubmit={(event) => {
                                         event.preventDefault()
-                                        const upc = this.upc.value
-                                        this.props.receiveProductByRetailer(upc)
+                                        const upc2 = this.upc2.value
+                                        this.props.receiveProductByRetailer(upc2)
                                     }}>
                                         <h6 className="heading-small text-muted mb-4">This is the <span style={{ color: "#881907" }}>Step 12</span> in the supply chain,
                                             it's about allows the retailer (Only the retailer) to receive the product that the distributor has been shipped.
@@ -68,9 +68,9 @@ class Receive extends Component {
                                             <div className="row">
                                                 <div className="col-lg-12">
                                                     <div className="form-group">
-                                                        <label className="form-control-label" htmlFor="upc">Universal Product Code</label>
-                                                        <input type="number" id="upc" name="upc" className="form-control"
-                                                               ref={(input) => { this.upc = input }} required />
+                                                        <label className="form-control-label" htmlFor="upc2">Universal Product Code</label>
+                                                        <input type="number" id="upc2" name="upc2" className="form-control"
+                                                               ref={(input) => { this.upc2 = input }} required />
                                                     </div>
                                                 </div>
                                             </div>

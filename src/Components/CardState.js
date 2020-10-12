@@ -25,7 +25,7 @@ class CardState extends Component{
         this.setState({
             blockNumber: await web3.eth.getBlockNumber(),
             blockNumberTime: (await web3.eth.getBlock('latest', false)).timestamp,
-            gasPrice: await web3.eth.getGasPrice(),
+            gasPrice: await web3.eth.getGasPrice() / Math.pow(10, 9),
             gasLimit: (await web3.eth.getBlock('latest', false)).gasLimit,
             gasLimitTime: (await web3.eth.getBlock('latest', false)).timestamp,
             transactionBlockTimeout: web3.eth.transactionBlockTimeout
@@ -58,7 +58,7 @@ class CardState extends Component{
                             <div className="row">
                                 <div className="col">
                                     <h5 className="card-title text-uppercase text-muted mb-0">Gas Price</h5>
-                                    <span className="h2 font-weight-bold mb-0">{ this.state.gasPrice }</span>
+                                    <span className="h2 font-weight-bold mb-0">{ this.state.gasPrice } GWei</span>
                                 </div>
                                 <div className="col-auto">
                                     <div className="icon icon-shape bg-gradient-green text-white rounded-circle shadow">

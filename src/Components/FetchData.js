@@ -194,7 +194,13 @@ class FetchData extends Component {
                                     </tr>
                                     <tr>
                                         <th>State</th>
-                                        <td className="font-weight-bold" style={{ color: '#2F1468' }}>{ this.state.stateX }</td>
+                                        <td className="font-weight-bold" style={{ color: '#2F1468' }}>
+                                            {
+                                                this.state.stateX === 'Purchased By Consumer'
+                                                    ? <div>{ this.state.stateX }. &nbsp; <span className="text-danger"><sup><i className="fas fa-exclamation-triangle" /></sup> It is no longer available.</span></div>
+                                                    : this.state.stateX
+                                            }
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>

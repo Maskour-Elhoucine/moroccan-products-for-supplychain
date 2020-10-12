@@ -40,7 +40,7 @@ class Process extends Component {
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="form-group">
-                                                <label className="form-control-label" htmlFor="notes">Product Slices</label>
+                                                <label className="form-control-label" htmlFor="slices">Product Slices</label>
                                                 <input type="number" id="slices" name="slices" className="form-control"
                                                        ref={(input) => { this.slices = input }} required />
                                             </div>

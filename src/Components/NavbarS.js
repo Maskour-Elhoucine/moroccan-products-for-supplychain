@@ -16,7 +16,7 @@ class NavbarS extends Component {
                             <a className="navbar-brand" href="/">
                                 <header className="App-header">
                                     <img src={logo} className="App-logo" alt="logo"/>
-                                    <h4 style={{ color: '#8069ad' }}> SAFFRON TRACE </h4>
+                                    <h4 style={{ color: '#8069ad' }}> ITEMS TRACEABILITY </h4>
                                 </header>
                             </a>
                         </div>
@@ -40,6 +40,12 @@ class NavbarS extends Component {
                                         <Nav.Link className="navbar-brand" href="/createProduct">
                                             <i className="far fa-plus-square text-purple" />
                                             <span className="nav-link-text">Create Product</span>
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link className="navbar-brand" href="/sellProduct">
+                                            <img src="https://img.icons8.com/fluent/48/000000/sell.png" style={{ width: '20px', height: '20px' }}/> &nbsp;&nbsp;
+                                            <span className="nav-link-text">Sell Product</span>
                                         </Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
@@ -77,6 +83,12 @@ class NavbarS extends Component {
                                         <Nav.Link className="navbar-brand" href="/fetchData">
                                             <i className="far fa-eye text-green" />
                                             <span className="nav-link-text">Fetch Data</span>
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link className="navbar-brand" href="/tracker">
+                                            <i className="fas fa-stream" />
+                                            <span className="nav-link-text">Tracker</span>
                                         </Nav.Link>
                                     </Nav.Item>
                                     <br />

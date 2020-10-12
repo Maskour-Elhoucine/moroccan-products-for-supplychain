@@ -11,6 +11,7 @@ import Purchase from "./Purchase";
 import Package from "./Package";
 import Ship from "./Ship";
 import Receive from "./Receive";
+import Tracking from "./TimeLine/Tracking";
 
 class Content extends Component {
     render() {
@@ -56,6 +57,7 @@ class Content extends Component {
                         )
                     } />
                     <Route exact path='/fetchData' component={ FetchData } />
+                    <Route exact path='/tracker' component={ Tracking } />
                     <Route exact path='/transactionsHistory' component={ TXHistory } />
                     <Route exact path="/account" render={(props) => ( <Account {...props} account = { this.props.account } /> )}  />
                 </BrowserRouter>

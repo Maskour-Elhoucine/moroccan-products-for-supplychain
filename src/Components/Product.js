@@ -69,8 +69,10 @@ class Product extends Component {
                                         <div className="col-lg-12">
                                             <div className="form-group">
                                                 <label className="form-control-label" htmlFor="notes"> Product Notes </label>
-                                                <textarea rows="4" id="notes" name="notes" ref={(input) => { this.notes = input }}
-                                                          className="form-control" required ></textarea>
+                                                <textarea rows="4" id="notes" name="notes" className="form-control" required
+                                                    ref={(input) => { this.notes = input }}
+                                                    placeholder="Anything related to the product, such as water pH, temperature, humidity, weight and more ..."
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -105,9 +107,11 @@ class Product extends Component {
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="form-group">
-                                                <label className="form-control-label" htmlFor="farmInformation">Farm Infos</label>
-                                                <textarea rows="4" id="farmInformation" name="farmInformation" ref={(input) => { this.farmInformation = input }}
-                                                    className="form-control" required ></textarea>
+                                                <label className="form-control-label" htmlFor="farmInformation">About The Farm</label>
+                                                <textarea rows="4" id="farmInformation" name="farmInformation"  className="form-control"
+                                                    ref={(input) => { this.farmInformation = input }}
+                                                    placeholder="Some informations about the farmer and the farm, like: Name, Phone number, Address, Email ..." required
+                                                />
                                             </div>
                                         </div>
                                     </div>

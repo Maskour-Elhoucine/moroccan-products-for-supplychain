@@ -48,7 +48,7 @@ class Sell extends Component {
                                         const price1 = window.web3.utils.toWei(this.price1.value, 'ether')
                                         this.props.sellProductByFarmer(upc1, price1)
                                     }}>
-                                        <h6 className="heading-small text-muted mb-4">This is <span style={{ color: "#881907" }}>Step 3</span> in the supply chain,
+                                        <h6 className="heading-small text-muted mb-4">This is the <span style={{ color: "#881907" }}>Step 3</span> in the supply chain,
                                             it's about allows the farmer (Only the farmer) to sell the product created or produced.</h6>
                                         <div className="pl-lg-4">
                                             <div className="row">

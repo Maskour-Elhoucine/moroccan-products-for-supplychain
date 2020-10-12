@@ -1,5 +1,5 @@
 //
-// Timeline
+// Tracking
 //
 
 
@@ -32,7 +32,7 @@
     }
 }
 
-// Timeline blocks
+// Tracking blocks
 
 .timeline-block {
     position: relative;
@@ -53,7 +53,7 @@
     }
 }
 
-// Timeline steps
+// Tracking steps
 
 .timeline-step {
     position: absolute;
@@ -100,7 +100,7 @@
     font-size: 1.75rem;
 }
 
-// Timeline content and body
+// Tracking content and body
 .timeline-content {
     position: relative;
     margin-left: 60px;
@@ -144,7 +144,7 @@
         float: right;
     }
 
-    // Timeline axis colors
+    // Tracking axis colors
 
     @each $color, $value in $theme-colors {
         [data-timeline-axis-color="#{$color}"]  {
